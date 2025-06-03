@@ -1,0 +1,70 @@
+/* .blob-fadein {
+  @apply animate-blob;
+  animation: appear 0.8s ease-in-out forwards, blob 5s ease-in-out infinite;
+} */
+
+@-webkit-keyframes shadowBlob {
+  0%,
+  100% {
+    border-radius: 60% 30% 40% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    border-radius: 65% 45% 30% 65% / 60% 30% 70% 60%;
+  }
+}
+
+@keyframes shadowBlob {
+  0%,
+  100% {
+    border-radius: 60% 30% 40% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    border-radius: 65% 45% 30% 65% / 60% 30% 70% 60%;
+  }
+}
+
+@-webkit-keyframes shadowFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shadowFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInOnly {
+  transform: translateZ(0);
+  animation: shadowFadeIn 0.8s ease-in-out forwards;
+}
+
+.shadowBlobFadeIn {
+  border-radius: 60% 30% 40% 70% / 60% 30% 70% 40%;
+  transform: translateZ(0);
+  animation: shadowFadeIn 2s ease-in-out forwards,
+    shadowBlob 5s ease-in-out infinite;
+  will-change: border-radius, opacity;
+  backface-visibility: hidden; /* iOS rendering */
+  perspective: 1000px; /* Helps with 3D rendering */
+}
+
+/* disabling default focus/highlight style */
+img {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
