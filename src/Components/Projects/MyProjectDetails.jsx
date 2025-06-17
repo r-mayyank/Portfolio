@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useCallback, useRef, useState } from "react";
 import "./slideinCards.css";
+import TrueFocus from "../ui/TrueFocus";
 
 const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
   const [imageLoaded, setImageLoaded] = useState({});
@@ -77,9 +78,8 @@ const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
     return projectDetails.map((project, index) => (
       <div
         key={project.name}
-        className={`col-span-3 ${
-          index % 2 === 0 ? "" : "sm:col-start-5"
-        } col-start-1 flex justify-center mt-7`}
+        className={`col-span-3 ${index % 2 === 0 ? "" : "sm:col-start-5"
+          } col-start-1 flex justify-center mt-7`}
       >
         <div
           ref={(el) => (projectRefs.current[index] = el)}
@@ -89,11 +89,10 @@ const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`block max-w-sm p-6 ${
-              isLight
+            className={`block max-w-sm p-6 ${isLight
                 ? "bg-pastelRed group-hover:bg-pastelRedLight"
                 : "bg-gray-800 group-hover:bg-gray-700"
-            } rounded-3xl`}
+              } rounded-3xl`}
           >
             <div className="relative overflow-hidden rounded-xl aspect-video">
               {/* Placeholder/Loading State */}
@@ -130,16 +129,14 @@ const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
             </div>
 
             <h5
-              className={`pt-2 mb-2 text-center text-2xl font-bold tracking-tight ${
-                isLight ? "text-slate-700" : "text-white"
-              } rounded-lg`}
+              className={`pt-2 mb-2 text-center text-2xl font-bold tracking-tight ${isLight ? "text-slate-700" : "text-white"
+                } rounded-lg`}
             >
               {project.name}
             </h5>
             <p
-              className={`font-normal text-center text-sm ${
-                isLight ? "font-semibold" : "font-normal"
-              }`}
+              className={`font-normal text-center text-sm ${isLight ? "font-semibold" : "font-normal"
+                }`}
             >
               {project.details}
             </p>
@@ -164,7 +161,14 @@ const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
         <div
           className={`col-span-3 col-start-1 text-center md:text-start md:ps-16 md:me-9 text-3xl md:text-4xl`}
         >
-          Proof Of Work
+          <TrueFocus
+            sentence="Projects Focus"
+            manualMode={true}
+            blurAmount={3}
+            borderColor="blue"
+            animationDuration={0.5}
+            pauseBetweenAnimations={0.5}
+          />
         </div>
         {renderProjectCards}
       </div>

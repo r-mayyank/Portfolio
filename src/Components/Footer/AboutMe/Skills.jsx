@@ -117,23 +117,23 @@ function FloatingTechCard({ section, index, isLight }) {
         initializeElements()
     }, [initializeElements])
 
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (containerRef.current) {
-                const rect = containerRef.current.getBoundingClientRect()
-                setMousePos({
-                    x: e.clientX - rect.left,
-                    y: e.clientY - rect.top - 80, // Account for header
-                })
-            }
-        }
+    // useEffect(() => {
+    //     const handleMouseMove = (e) => {
+    //         if (containerRef.current) {
+    //             const rect = containerRef.current.getBoundingClientRect()
+    //             setMousePos({
+    //                 x: e.clientX - rect.left,
+    //                 y: e.clientY - rect.top - 80, // Account for header
+    //             })
+    //         }
+    //     }
 
-        const container = containerRef.current
-        if (container) {
-            container.addEventListener("mousemove", handleMouseMove)
-            return () => container.removeEventListener("mousemove", handleMouseMove)
-        }
-    }, [])
+    //     const container = containerRef.current
+    //     if (container) {
+    //         container.addEventListener("mousemove", handleMouseMove)
+    //         return () => container.removeEventListener("mousemove", handleMouseMove)
+    //     }
+    // }, [])
 
     useEffect(() => {
         const animate = () => {

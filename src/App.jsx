@@ -112,7 +112,7 @@ const App = () => {
         isLight={isLight}
         splashStatus={showSplash}
       /> */}
-      <Socials globalBlur={isGlobalBlur} isLight={isLight} />
+      <Socials globalBlur={isGlobalBlur} isLight={isLight} splashStatus={showSplash}/>
     </>
   );
 };
