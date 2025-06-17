@@ -1,3 +1,13 @@
+import { HoverBorderGradient } from "./AboutMe/HoverBorder";
+
+const heading = () => {
+  return (
+    <div>
+      TECHno loguy
+    </div>
+  )
+}
+
 const TechStack = ({ globalBlur, isLight, splashStatus }) => {
   return (
     <div className={`${splashStatus ? "hidden" : "block"}`}>
@@ -8,9 +18,10 @@ const TechStack = ({ globalBlur, isLight, splashStatus }) => {
             : "blur-none duration-500 ease-in-out"
         } mt-10 md:mt-20 pt-5 flex flex-col xl:px-80`}
       >
-        <div className="mb-10 col-span-full col-start-1 text-center md:text-start md:ps-16 md:me-9 text-3xl md:text-4xl">
+        <HoverBorderGradient isLight={isLight} splashStatus={splashStatus}></HoverBorderGradient>
+        {/* <div className="bg-inherit rounded-full py-2 outline-double border border-white mb-10 col-span-full col-start-1 text-center md:text-start md:ps-16 md:me-9 text-3xl md:text-4xl">
           Tech-Stack
-        </div>
+        </div> */}
       </div>
       <div
         className={`${

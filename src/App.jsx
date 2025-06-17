@@ -7,6 +7,7 @@ import BackToTop from "./Components/BackToTop";
 import { useState, useEffect, useLayoutEffect } from "react";
 
 import "./Components/style.css";
+import { HoverBorderGradient } from "./Components/Footer/AboutMe/HoverBorder";
 
 const App = () => {
   window.addEventListener("load", () => {
@@ -101,11 +102,16 @@ const App = () => {
         isLight={isLight}
         splashStatus={showSplash}
       />
-      <TechStack
+      <HoverBorderGradient 
+      isLight={isLight} 
+      globalBlur={isGlobalBlur}
+      splashStatus={showSplash}>
+      </HoverBorderGradient>
+      {/* <TechStack
         globalBlur={isGlobalBlur}
         isLight={isLight}
         splashStatus={showSplash}
-      />
+      /> */}
       <Socials globalBlur={isGlobalBlur} isLight={isLight} />
     </>
   );

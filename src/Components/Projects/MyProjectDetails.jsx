@@ -164,7 +164,7 @@ const MyProjectDetails = ({ projectDetails, isLight, splashStatus }) => {
         <div
           className={`col-span-3 col-start-1 text-center md:text-start md:ps-16 md:me-9 text-3xl md:text-4xl`}
         >
-          Projects
+          Proof Of Work
         </div>
         {renderProjectCards}
       </div>
